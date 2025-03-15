@@ -10,7 +10,6 @@ public class MovingState : CustomerBaseState
 
     public override void StartState()
     {
-        Debug.Log("Moving state");
         customer.CustomerAnimatorSwitcher.CustomerWalk();
         isCurrentState = true;
     }

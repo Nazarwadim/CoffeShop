@@ -5,9 +5,8 @@ public class CustomerBaseState : BaseState
 {
     protected Customer customer;
 
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
         customer = GetComponent<Customer>();
     }
 }

@@ -8,8 +8,6 @@ public class GoingOutsideState : CustomerBaseState
 
     public override void StartState()
     {
-        Debug.Log("GoingOutside state");
-    
         customer.CustomerAnimatorSwitcher.CustomerWalk();
         Vector3 direction = _wayPoints.GetCurrentPoint().position - transform.position;
 

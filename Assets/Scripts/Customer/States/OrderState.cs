@@ -8,7 +8,6 @@ public class OrderState : CustomerBaseState, IOrdered
 
     public override void StartState()
     {
-        Debug.Log("Order state");
         customer.CustomerAnimatorSwitcher.CustomerStandIdle();
         Ordable.Order(this);
     }
