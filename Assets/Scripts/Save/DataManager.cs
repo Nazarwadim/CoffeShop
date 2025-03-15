@@ -9,13 +9,13 @@ public class DataManager<T>
 
     private static readonly string SavePath = DataPath + FileName;
 
-    public static void Save(T data)
+    public static void Save(T data, string name)
     {
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(SavePath, json);
     }
 
-    public static T Load()
+    public static T Load(string name)
     {
         if (File.Exists(SavePath))
         {

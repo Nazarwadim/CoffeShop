@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
     public bool CanMove;
