@@ -5,9 +5,10 @@ using UnityEngine;
 public class Snacks : MonoBehaviour, IOrdable
 {
     [SerializeField] private float _timeToOrder;
-    [SerializeField] private int moneyForCustomer;
+    [SerializeField] private int _moneyForCustomer;
+    [SerializeField] private Money _money;
 
-    private readonly Queue<IOrdered> _customersQueue = new();
+    private readonly Queue<IOrderer> _customersQueue = new();
 
     private IWorker _worker;
 
@@ -27,7 +28,7 @@ public class Snacks : MonoBehaviour, IOrdable
         }
     }
 
-    public void Order(IOrdered customer)
+    public void Order(IOrderer customer)
     {
         _customersQueue.Enqueue(customer);
         if (_customersQueue.Count == 1)
@@ -38,13 +39,15 @@ public class Snacks : MonoBehaviour, IOrdable
 
     private void OrderInQueue()
     {
-        if(_worker == null)
+        if (_worker == null)
         {
             return;
         }
 
-        IOrdered customer = _customersQueue.Dequeue();
+        IOrderer customer = _customersQueue.Dequeue();
         customer.Ordered();
+        _money.AddMoney(_moneyForCustomer);
+
         if (_customersQueue.Count == 0)
         {
             CancelInvoke(nameof(OrderInQueue));

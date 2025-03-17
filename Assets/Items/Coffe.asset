@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2f77542d446c0efb33d1dac3f13819, type: 3}
   m_Name: Coffe
   m_EditorClassIdentifier: 
-  Name: Coffe
-  Texture: {fileID: 21300000, guid: 4036ce4f376a0a8f1ab7d0d0d465d1f0, type: 3}
-  Prefab: {fileID: 8372629477522293776, guid: 580351aa42700fb4eb05d12c653a720e, type: 3}
+  _name: Coffe
+  _texture: {fileID: 21300000, guid: 4036ce4f376a0a8f1ab7d0d0d465d1f0, type: 3}
+  _prefab: {fileID: 8372629477522293776, guid: 580351aa42700fb4eb05d12c653a720e, type: 3}

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OrderState : CustomerBaseState, IOrdered
+public class OrderState : CustomerBaseState, IOrderer
 {
     [SerializeField] private GoingOutsideState _goingOutsideState;
 

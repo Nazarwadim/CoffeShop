@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
@@ -22,6 +23,12 @@ public class Inventory : MonoBehaviour
         {
             yield return item;
         }
+    }
+
+    public void SetItems(IEnumerable<InvItem> invItems)
+    {
+        _items = invItems.ToArray();
+        InventoryChanged?.Invoke();
     }
 
     public int FindItem(string name)

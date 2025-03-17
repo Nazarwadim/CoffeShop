@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2f77542d446c0efb33d1dac3f13819, type: 3}
   m_Name: Milk
   m_EditorClassIdentifier: 
-  Name: Milk
-  Texture: {fileID: 21300000, guid: 9e0ee789bae50156b93f4a30c926ee6e, type: 3}
-  Prefab: {fileID: 8372629477522293776, guid: 1ed05462904315ea5be018f22dc86bfc, type: 3}
+  _name: Milk
+  _texture: {fileID: 21300000, guid: 9e0ee789bae50156b93f4a30c926ee6e, type: 3}
+  _prefab: {fileID: 8372629477522293776, guid: 1ed05462904315ea5be018f22dc86bfc, type: 3}

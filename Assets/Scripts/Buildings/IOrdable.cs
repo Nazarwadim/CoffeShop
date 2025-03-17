@@ -1,7 +1,4 @@
-using UnityEngine;
-using System;
-
 public interface IOrdable
 {
-    public void Order(IOrdered customer);
+    public void Order(IOrderer customer);
 }

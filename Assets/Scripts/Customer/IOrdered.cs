@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-public interface IOrdered
+public interface IOrderer
 {
     public void Ordered();
 }

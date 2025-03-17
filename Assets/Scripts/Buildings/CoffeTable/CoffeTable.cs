@@ -7,12 +7,13 @@ public class CoffeTable : MonoBehaviour, IOrdable
 {
     [SerializeField] private float _timeToOrder;
     [SerializeField] private float _timeToMakeCappuccino;
-    [SerializeField] private int moneyForCustomer;
+    [SerializeField] private int _moneyForCustomer;
     [SerializeField] private Inventory _inventory;
     [SerializeField] private Item _cappuccino;
     [SerializeField] private Recipe _cappuccinoRecipe;
+    [SerializeField] private Money _money;
 
-    private readonly Queue<IOrdered> _customersQueue = new();
+    private readonly Queue<IOrderer> _customersQueue = new();
 
     private Coroutine _makingCappuccino;
 
@@ -31,7 +32,7 @@ public class CoffeTable : MonoBehaviour, IOrdable
         _inventory.InventoryChanged -= StartMakingCappuccino;
     }
 
-    public void Order(IOrdered customer)
+    public void Order(IOrderer customer)
     {
         _customersQueue.Enqueue(customer);
         if (_customersQueue.Count == 1)
@@ -66,7 +67,9 @@ public class CoffeTable : MonoBehaviour, IOrdable
             return;
         }
 
-        IOrdered customer = _customersQueue.Dequeue();
+        IOrderer customer = _customersQueue.Dequeue();
+        
+        _money.AddMoney(_moneyForCustomer);
 
         customer.Ordered();
         _inventory.RemoveItem(_cappuccino);

@@ -1,4 +1,4 @@
 public interface IWorker
 {
-    public void Work();
+    public void Work(float duration);
 }
